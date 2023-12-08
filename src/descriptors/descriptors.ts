@@ -5,7 +5,14 @@ import { Descriptors, OfficialDescriptors } from './descriptors.types';
  * @returns
  */
 export const GetOFFICIALDescriptors = (): Descriptors[] => {
-  return ['LEGAL', 'LEGAL PROFESSIONAL PRIVILEGE', 'MARKET SENSITIVE', 'COMMERCIAL', 'HR / MANAGEMENT'];
+  return [
+    'LEGAL',
+    'LEGAL PROFESSIONAL PRIVILEGE',
+    'MARKET SENSITIVE',
+    'COMMERCIAL',
+    'HR / MANAGEMENT',
+    'PERONSAL DATA',
+  ];
 };
 
 /**

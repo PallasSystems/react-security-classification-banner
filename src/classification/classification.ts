@@ -9,26 +9,33 @@ const BannerStyle: CSSProperties = {
   width: '100%',
 };
 
-const UnclassifiedStyle: CSSProperties = {
+export const UnclassifiedStyle: CSSProperties = {
   backgroundColor: 'rgb(97,97,97)',
   ...BannerStyle,
 };
 
-const OfficialStyle: CSSProperties = {
+export const OfficialStyle: CSSProperties = {
   backgroundColor: 'rgb(43, 113, 199)',
   ...BannerStyle,
 };
 
-const SecretStyle: CSSProperties = {
+export const SecretStyle: CSSProperties = {
   backgroundColor: 'rgb(243, 156, 44)',
   ...BannerStyle,
 };
 
-const TopSecretStyle: CSSProperties = {
+export const TopSecretStyle: CSSProperties = {
   backgroundColor: 'rgb(170, 0, 0)',
   ...BannerStyle,
 };
 
+/**
+ * Retrieves the correct styling information for the security banner based on the Classification supplied.
+ *
+ * @param classification The security classification level of the banner
+ * @param style additional style elements to add to the banner.
+ * @returns  unclassified style by default unless a different security classification level.
+ */
 export const GetBannerStyle = (classification?: Classification, style?: CSSProperties): CSSProperties => {
   let result = UnclassifiedStyle;
 
@@ -49,6 +56,13 @@ export const GetBannerStyle = (classification?: Classification, style?: CSSPrope
   return { ...result, ...style };
 };
 
+/**
+ * The Security Classification text, 'SENSITIVE' descriptor modifies the classification string for the 'OFFICIAL' label.
+ *
+ * @param classification the security classification level
+ * @param descriptor the descriptors in the banner, (e.g. its looking for 'SENSITIVE')
+ * @returns 'NOT PROTECTIVELY MARKED' is the default response level.
+ */
 export const GetClassificationText = (classification?: Classification, descriptor?: string[]): string => {
   let result = 'NOT PROTECTIVELY MARKED';
 
