@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 
-import { SecurityClassification } from './securitybanner.types';
+import { SecurityBannerProps, SecurityClassification } from './securitybanner.types';
 import { GetBannerStyle, GetClassificationText } from '../classification';
 import { GetEyesOnly, GetOriginatingNation } from '../country';
 import { GetDescriptorText } from '../descriptors';
@@ -19,15 +19,16 @@ export const GetCodeWordText = (classification?: string, codewords?: string[]) =
   return result;
 };
 
-export const SecurityBanner: FC<SecurityClassification> = ({
+export const SecurityBanner: FC<SecurityBannerProps> = ({
   classification,
   handlingInstruction,
   codeWords,
   descriptors,
   originatingEntity,
   nationalityCaveat,
+  style,
 }) => {
-  const styles = useMemo(() => GetBannerStyle(classification), [classification]);
+  const styles = useMemo(() => GetBannerStyle(classification, style), [classification, style]);
   // Classification text
   const classText = useMemo(() => GetClassificationText(classification, descriptors), [classification]);
   //

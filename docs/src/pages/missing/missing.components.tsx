@@ -3,12 +3,19 @@ import { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import { BannerNavBar, Footer, PallasSVG } from '@pallassystems/website-core';
+import { SecurityBanner } from '@pallassystems/react-security-classification-banner';
+
 import { MissingPageProperties } from './missing.types.js';
 
 const MissingPage: FC<MissingPageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <main role={'main'}>
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container fluid id={'Missing.Container'} className={'content'}>
         <Row align='center' id={'Missing.Container.ImageRow'}>
           <Col className={'text-dark'} id={'Missing.Container.ImageRow.Coloumn'}>

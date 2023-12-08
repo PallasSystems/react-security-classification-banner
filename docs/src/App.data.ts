@@ -24,6 +24,7 @@ export const PageData: HomePageProperties = {
       { path: '/api', text: 'API' },
       { path: '/examples', text: 'Examples' },
     ],
+    sticky: 'top',
   },
   footerProps: {
     socialMedia: {

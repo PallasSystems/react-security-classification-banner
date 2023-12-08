@@ -6,6 +6,7 @@ const BannerStyle: CSSProperties = {
   paddingBottom: '0.5em',
   paddingTop: '0.5em',
   textAlign: 'center',
+  width: '100%',
 };
 
 const UnclassifiedStyle: CSSProperties = {
@@ -28,7 +29,7 @@ const TopSecretStyle: CSSProperties = {
   ...BannerStyle,
 };
 
-export const GetBannerStyle = (classification?: Classification): CSSProperties => {
+export const GetBannerStyle = (classification?: Classification, style?: CSSProperties): CSSProperties => {
   let result = UnclassifiedStyle;
 
   if (classification) {
@@ -45,7 +46,7 @@ export const GetBannerStyle = (classification?: Classification): CSSProperties =
     }
   }
 
-  return result;
+  return { ...result, ...style };
 };
 
 export const GetClassificationText = (classification?: Classification, descriptor?: string[]): string => {

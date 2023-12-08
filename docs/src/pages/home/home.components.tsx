@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { CSSProperties, FC } from 'react';
+import { Button, Col, Container, Row, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
@@ -14,8 +14,12 @@ import projectProps from '../../../../package.json';
 const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <main role={'main'}>
-      <SecurityBanner />
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container id='intro' className={'my-2 text-center'}>
         <Row className={'my-2'}>
           <h1>React Classification Banner</h1>

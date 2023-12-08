@@ -4,6 +4,7 @@ import Prism from 'prismjs';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { RBTable } from '@pallassystems/react-bootstrap-table';
+import { SecurityBanner } from '@pallassystems/react-security-classification-banner';
 
 // Getting Started Page Properties
 import { ApiPageProperties } from '../api.types';
@@ -20,7 +21,12 @@ const ApiSecurityClassificationPage: FC<ApiPageProperties> = ({ footerProps, nav
 
   return (
     <main role={'main'}>
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container id='intro' className={'my-2'}>
         <Row>
           <h1>SecurityClassification</h1>

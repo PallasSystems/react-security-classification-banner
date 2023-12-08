@@ -13,8 +13,12 @@ import { GettingStartedUsageComponent } from './gettingStarted.usage.components'
 const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <main role={'main'}>
-      <SecurityBanner />
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container id='intro'>
         <Row className={'my-2'}>
           <GettingStartedInstallComponent />

@@ -33,7 +33,12 @@ const ApiDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
 
   return (
     <main role={'main'}>
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container id='intro' className={'my-2'}>
         <Row>
           <h1>Descriptors</h1>

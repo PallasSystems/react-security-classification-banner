@@ -12,8 +12,12 @@ import { ApiTablePageData, ApiTableTypesPageData } from './api.data';
 const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <main role={'main'}>
-      <SecurityBanner />
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container id='intro' className={'my-2'}>
         <Row className={'my-2'}>
           <h1>API Reference</h1>

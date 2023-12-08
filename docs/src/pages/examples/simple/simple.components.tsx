@@ -15,8 +15,12 @@ import 'prismjs/themes/prism.min.css';
 const SimpleBannerExamplesPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps }) => {
   return (
     <main role={'main'}>
-      <SecurityBanner />
-      <BannerNavBar {...navBarProps} />
+      <BannerNavBar
+        {...navBarProps}
+        prefixRow={() => {
+          return <SecurityBanner />;
+        }}
+      />
       <Container id='intro' className={'my-2'}>
         <SimpleBannerExamplesComponent />
       </Container>
