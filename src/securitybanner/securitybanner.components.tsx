@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 
-import { SecurityBannerProps, SecurityClassification } from './securitybanner.types';
+import { SecurityBannerProps } from './securitybanner.types';
 import { GetBannerStyle, GetClassificationText } from '../classification';
 import { GetEyesOnly, GetOriginatingNation } from '../country';
 import { GetDescriptorText } from '../descriptors';

@@ -23,7 +23,7 @@ export const GetEyesOnly = (
 
   values?.forEach((value: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2) => {
     //
-    let country = GetOriginatingNation(classification, value);
+    const country = GetOriginatingNation(classification, value);
     //
     if (country && country.length > 0) {
       if (result.length > 0) {
