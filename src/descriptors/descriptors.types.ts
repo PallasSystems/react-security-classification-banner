@@ -1,4 +1,4 @@
-export type OfficialDescriptors = 'LEGAL' | 'HR / MANAGEMENT' | 'PERONSAL DATA';
+export type OfficialDescriptors = 'LEGAL' | 'HR / MANAGEMENT' | 'PERSONAL DATA';
 
 export type Descriptors =
   /**
