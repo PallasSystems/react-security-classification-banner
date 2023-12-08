@@ -14,6 +14,18 @@ import 'prismjs/themes/prism.min.css';
 import { ApiTableConfiguration } from '../api.data';
 import { SecurityClassificationColumnDefData } from './SecurityClassification.data';
 
+const GetSecurityClassificationCode = (): string => {
+  return (
+    'const SecurityBannerPage: FC = () => {\n' +
+    '\treturn (\n' +
+    "\t\t<main role={'main'} className={'flex-shrink-0'}>\n" +
+    "\t\t\t<SecurityBanner originatingEntity={'NATO'} classification={'SECRET'} descriptors={['COMMERCIAL']} nationalityCaveat={['NATO']} />\n" +
+    '\t\t</main>\n' +
+    '\t);\n' +
+    '};'
+  );
+};
+
 const ApiSecurityClassificationPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   useEffect(() => {
     Prism.highlightAll();
@@ -41,8 +53,22 @@ const ApiSecurityClassificationPage: FC<ApiPageProperties> = ({ footerProps, nav
           <h2>Example</h2>
         </Row>
         <Row>
+          <p>Below we have provided an example of the setting being used with the library.</p>
+        </Row>
+        <Row>
+          <SecurityBanner
+            originatingEntity={'NATO'}
+            classification={'SECRET'}
+            descriptors={['COMMERCIAL']}
+            nationalityCaveat={['NATO']}
+          />
+        </Row>
+        <Row>
+          <h3>Source Code</h3>
+        </Row>
+        <Row>
           <pre className={'language-javascript'}>
-            <code>{JSON.stringify({}, null, 2)}</code>
+            <code>{GetSecurityClassificationCode()}</code>
           </pre>
         </Row>
       </Container>
