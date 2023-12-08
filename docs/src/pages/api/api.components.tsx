@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -26,7 +26,7 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           <ul>
             {ApiTablePageData.map((value) => {
               return (
-                <li>
+                <li key={value.text}>
                   <LinkContainer to={value.link}>
                     <a>{value.text}</a>
                   </LinkContainer>
@@ -48,7 +48,7 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           <ul>
             {ApiTableTypesPageData.map((value) => {
               return (
-                <li>
+                <li key={value.text}>
                   <LinkContainer to={value.link}>
                     <a>{value.text}</a>
                   </LinkContainer>

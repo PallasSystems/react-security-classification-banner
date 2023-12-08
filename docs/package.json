@@ -1,11 +1,13 @@
 {
-  "name": "@pallassystems/react-classification-banner-docs",
+  "name": "@pallassystems/react-security-classification-banner-docs",
   "private": true,
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
+    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
+    "lint": "npm run eslint && npm run stylelint",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,7 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
+    "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",

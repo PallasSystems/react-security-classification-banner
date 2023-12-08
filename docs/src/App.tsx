@@ -1,3 +1,4 @@
+import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {
@@ -20,14 +21,14 @@ function App() {
         <Route path={''} element={<HomePage {...PageData} />} />
         <Route path={'/api'} element={<ApiHeadPage {...PageData} />} />
         {ApiTablePageData.map((value) => {
-          return <Route path={value.link} element={value.page(PageData)} />;
+          return <Route key={value.text} path={value.link} element={value.page(PageData)} />;
         })}
         {ApiTableTypesPageData.map((value) => {
-          return <Route path={value.link} element={value.page(PageData)} />;
+          return <Route key={value.text} path={value.link} element={value.page(PageData)} />;
         })}
         <Route path={'/examples'} element={<ExamplesHeadPage {...PageData} />} />
         {ExamplePageData.map((value) => {
-          return <Route path={value.link} element={value.page(PageData)} />;
+          return <Route key={value.text} path={value.link} element={value.page(PageData)} />;
         })}
         <Route path={'/gettingstarted'} element={<GettingStartedPage {...PageData} />} />
         <Route path={'/gettingstarted/install'} element={<GettingStartedInstallPage {...PageData} />} />

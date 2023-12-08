@@ -13,14 +13,14 @@ type ApiPage = {
 };
 
 type ApiTableEntry = {
-  field: String;
-  type: String;
-  required: String;
+  field: string;
+  type: string;
+  required: string;
   description: string;
 };
 
 type ApiEnumTableEntry = {
-  field: String;
+  field: string;
   description: string;
 };
 

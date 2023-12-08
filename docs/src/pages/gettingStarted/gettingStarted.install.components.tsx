@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import Prism from 'prismjs';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
@@ -37,7 +37,7 @@ const GettingStartedInstallComponent: FC = () => {
       <Row className={'px-3'}>
         <ul>
           {dependencies.map(function (value) {
-            return <li>{value}</li>;
+            return <li key={value}>{value}</li>;
           })}
         </ul>
       </Row>

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { SecurityBanner } from '@pallassystems/react-security-classification-banner';
@@ -26,7 +26,7 @@ const ExamplesHeadPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps
           <ul>
             {ExamplePageData.map((value) => {
               return (
-                <li>
+                <li key={value.text}>
                   <LinkContainer to={value.link}>
                     <a>{value.text}</a>
                   </LinkContainer>

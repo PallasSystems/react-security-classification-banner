@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Prism from 'prismjs';
 

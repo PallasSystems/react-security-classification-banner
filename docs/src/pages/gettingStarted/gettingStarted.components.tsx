@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
 import { SecurityBanner } from '@pallassystems/react-security-classification-banner';

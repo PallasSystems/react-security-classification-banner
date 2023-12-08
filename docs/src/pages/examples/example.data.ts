@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-import { RBTColumnDefs, RBTOptions } from '@pallassystems/react-bootstrap-table';
-
 import { ExamplesPage, ExamplesPageProperties } from './examples.types';
 import { SimpleBannerExamplesPage } from './simple';
 

@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import Prism from 'prismjs';
 
 import { BannerNavBar, Footer } from '@pallassystems/website-core';
