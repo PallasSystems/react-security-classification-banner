@@ -12,7 +12,6 @@ export const GetCodeWordText = (classification?: string, codewords?: string[]) =
   if (classification) {
     if (!classification?.startsWith('OFFICIAL')) {
       result = codewords?.join(' ') ?? '';
-    } else {
     }
   }
 
