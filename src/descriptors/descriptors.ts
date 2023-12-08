@@ -11,7 +11,7 @@ export const GetOFFICIALDescriptors = (): Descriptors[] => {
     'MARKET SENSITIVE',
     'COMMERCIAL',
     'HR / MANAGEMENT',
-    'PERONSAL DATA',
+    'PERSONAL DATA',
   ];
 };
 

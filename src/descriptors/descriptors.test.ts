@@ -14,7 +14,7 @@ describe('GetClassificationText', () => {
 
   test('OfficialClassificationWithDescriptors', () => {
     const descriptors: OfficialDescriptors[] = ['LEGAL', 'HR / MANAGEMENT', 'PERSONAL DATA'];
-    expect(GetDescriptorText('OFFICIAL', descriptors)).toEqual('LEGAL HR / MANAGEMENT PERONSAL DATA');
+    expect(GetDescriptorText('OFFICIAL', descriptors)).toEqual('LEGAL HR / MANAGEMENT PERSONAL DATA');
   });
 
   test('SecretClassificationNoDescriptors', () => {

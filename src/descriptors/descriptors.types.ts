@@ -21,7 +21,7 @@ export type Descriptors =
    * Where the information relates to a member of staff (including their performance),
    * use the HR / Management descriptor (see above) instead.
    */
-  | 'PERONSAL DATA'
+  | 'PERSONAL DATA'
   /**
    * Information that may be commercially damaging to your organisation or to a commercial
    * partner if improperly accessed, or which is subject to terms of commercial confidentiality.
