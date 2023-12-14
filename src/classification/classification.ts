@@ -80,3 +80,30 @@ export const GetClassificationText = (classification?: Classification, descripto
 
   return result;
 };
+
+/**
+ * This expects to be supplied two different security classifications and returns the highest classifiction.
+ *
+ * @param original one of the classifications to merge
+ * @param toMerge one of the classifications to merge
+ * @returns null/undefined if nothing is supplied.
+ */
+export const MergeClassifications = (original?: Classification, toMerge?: Classification) => {
+  let result = original;
+
+  if (toMerge && original !== toMerge) {
+    if (toMerge === 'TOP SECRET') {
+      result = toMerge;
+    } else if (toMerge === 'SECRET') {
+      if (!original || original === 'OFFICIAL') {
+        result = toMerge;
+      }
+    } else if (toMerge === 'OFFICIAL') {
+      if (!original) {
+        result = toMerge;
+      }
+    }
+  }
+
+  return result;
+};
