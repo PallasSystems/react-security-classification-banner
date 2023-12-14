@@ -5,51 +5,49 @@ import { GetBannerStyle, GetClassificationText } from '../classification';
 import { GetEyesOnly, GetOriginatingNation } from '../country';
 import { GetDescriptorText } from '../descriptors';
 import { GetHandlingInstructionsText } from '../handlingInstructions';
+import { GetCodeWordText, GetSecurityClassification, GetUpToText } from './securitybanner.utils';
 
-export const GetCodeWordText = (classification?: string, codewords?: string[]) => {
-  let result = '';
-
-  if (classification) {
-    if (!classification?.startsWith('OFFICIAL')) {
-      result = codewords?.join(' ') ?? '';
-    }
-  }
-
-  return result;
-};
-
-export const SecurityBanner: FC<SecurityBannerProps> = ({
-  classification,
-  handlingInstruction,
-  codeWords,
-  descriptors,
-  originatingEntity,
-  nationalityCaveat,
-  style,
-}) => {
-  const styles = useMemo(() => GetBannerStyle(classification, style), [classification, style]);
+export const SecurityBanner: FC<SecurityBannerProps> = ({ records, style, upTo }) => {
+  // convert an array into a single record
+  const record = useMemo(() => GetSecurityClassification(records), [records]);
+  // Retrieve
+  const styles = useMemo(() => GetBannerStyle(record.classification, style), [record.classification, style]);
   // Classification text
-  const classText = useMemo(() => GetClassificationText(classification, descriptors), [classification]);
+  const classText = useMemo(
+    () => GetClassificationText(record.classification, record.descriptors),
+    [record.classification],
+  );
   //
   const originating = useMemo(
-    () => GetOriginatingNation(classification, originatingEntity),
-    [originatingEntity, classification],
+    () => GetOriginatingNation(record.classification, record.originatingEntity),
+    [record.originatingEntity, record.classification],
   );
   //
   const handlingText = useMemo(
-    () => GetHandlingInstructionsText(classification, handlingInstruction),
-    [descriptors, classification],
+    () => GetHandlingInstructionsText(record.classification, record.handlingInstruction),
+    [record.descriptors, record.classification],
   );
   //
-  const descriptorText = useMemo(() => GetDescriptorText(classification, descriptors), [descriptors, classification]);
+  const descriptorText = useMemo(
+    () => GetDescriptorText(record.classification, record.descriptors),
+    [record.descriptors, record.classification],
+  );
   //
-  const codeWordText = useMemo(() => GetCodeWordText(classification, codeWords), [codeWords, classification]);
+  const codeWordText = useMemo(
+    () => GetCodeWordText(record.classification, record.codeWords),
+    [record.codeWords, record.classification],
+  );
   //
-  const eyesOnlyText = useMemo(() => GetEyesOnly(classification, nationalityCaveat), [codeWords, classification]);
-  //
+  const eyesOnlyText = useMemo(
+    () => GetEyesOnly(record.classification, record.nationalityCaveat),
+    [record.codeWords, record.classification],
+  );
+  // Process the supplied data to work out if we should have an UPTO Label on the banner
+  const upToText = useMemo(() => GetUpToText(records, upTo), [records, upTo]);
 
   return (
     <div style={styles}>
+      {upToText.length > 0 ? <b>{upToText} </b> : null}
       {originating.length > 0 ? <b>{originating} - </b> : null}
       <b>{classText}</b>
       {handlingText.length > 0 ? <b> - {handlingText}</b> : null}
