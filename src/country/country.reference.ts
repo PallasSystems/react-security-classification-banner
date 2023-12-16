@@ -150,6 +150,9 @@ export const GetISO3166Alpha3FromISO3166Alpha2 = (value?: ISO_3166_1_ALPHA2): un
       case 'CY':
         result = 'CYP';
         break;
+      case 'CN':
+        result = 'CHN';
+        break;
       case 'CZ':
         result = 'CZE';
         break;
@@ -233,6 +236,12 @@ export const GetISO3166Alpha3FromISO3166Alpha2 = (value?: ISO_3166_1_ALPHA2): un
         break;
       case 'US':
         result = 'USA';
+        break;
+      case 'VA':
+        result = 'VAT';
+        break;
+      case 'NP':
+        result = 'NPL';
         break;
     }
   }

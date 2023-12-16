@@ -54,6 +54,13 @@ describe('GetISO3166Alpha3', () => {
     expect(GetISO3166Alpha3('NLD')).toEqual(['NLD']);
     expect(GetISO3166Alpha3('POL')).toEqual(['POL']);
     expect(GetISO3166Alpha3('DNK')).toEqual(['DNK']);
+    expect(GetISO3166Alpha3('AUS')).toEqual(['AUS']);
+    expect(GetISO3166Alpha3('CHN')).toEqual(['CHN']);
+    expect(GetISO3166Alpha3('VAT')).toEqual(['VAT']);
+    expect(GetISO3166Alpha3('NPL')).toEqual(['NPL']);
+    expect(GetISO3166Alpha3('LU')).toEqual(['LUX']);
+    expect(GetISO3166Alpha3('IE')).toEqual(['IRL']);
+    expect(GetISO3166Alpha3('DE')).toEqual(['DEU']);
   });
 
   test('Test Valid Org', () => {
@@ -74,6 +81,11 @@ describe('GetISO3166Alpha3FromISO3166Alpha2', () => {
 
   test('Test Valid Alpha2', () => {
     expect(GetISO3166Alpha3FromISO3166Alpha2('AU')).toEqual('AUS');
-    expect(GetISO3166Alpha3FromISO3166Alpha2('EE')).toEqual('EST');
+    expect(GetISO3166Alpha3FromISO3166Alpha2('CN')).toEqual('CHN');
+    expect(GetISO3166Alpha3FromISO3166Alpha2('VA')).toEqual('VAT');
+    expect(GetISO3166Alpha3FromISO3166Alpha2('NP')).toEqual('NPL');
+    expect(GetISO3166Alpha3FromISO3166Alpha2('LU')).toEqual('LUX');
+    expect(GetISO3166Alpha3FromISO3166Alpha2('IE')).toEqual('IRL');
+    expect(GetISO3166Alpha3FromISO3166Alpha2('DE')).toEqual('DEU');
   });
 });
