@@ -147,9 +147,6 @@ export const GetISO3166Alpha3FromISO3166Alpha2 = (value?: ISO_3166_1_ALPHA2): un
       case 'CA':
         result = 'CAN';
         break;
-      case 'HR':
-        result = 'HRV';
-        break;
       case 'CY':
         result = 'CYP';
         break;

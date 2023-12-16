@@ -2,7 +2,7 @@ import { GetISO3166Alpha3FromISO3166Alpha2, IsOrganisation } from './country.ref
 import type { ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './country.types';
 
 export const GetOrgAndCountry = (value?: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2) => {
-  let result: { org?: Organisation; country?: ISO_3166_1_ALPHA3 } = {};
+  const result: { org?: Organisation; country?: ISO_3166_1_ALPHA3 } = {};
 
   if (value) {
     if (IsOrganisation(value)) {
@@ -23,7 +23,7 @@ export const GetOrgAndCountry = (value?: Organisation | ISO_3166_1_ALPHA3 | ISO_
  * @returns
  */
 export const GetOrgsAndCountries = (values?: Organisation[] | ISO_3166_1_ALPHA3[] | ISO_3166_1_ALPHA2[]) => {
-  let result: { orgs: Organisation[]; countries: ISO_3166_1_ALPHA3[] } = { orgs: [], countries: [] };
+  const result: { orgs: Organisation[]; countries: ISO_3166_1_ALPHA3[] } = { orgs: [], countries: [] };
 
   values?.forEach((value) => {
     const converted = GetOrgAndCountry(value);

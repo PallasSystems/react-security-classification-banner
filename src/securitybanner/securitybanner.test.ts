@@ -1,4 +1,3 @@
-import { SECRET } from './securitybanner.stories';
 import { GetCodeWordText, GetUpToText, I18nUpToText } from './securitybanner.utils';
 
 describe('GetUpToText', () => {

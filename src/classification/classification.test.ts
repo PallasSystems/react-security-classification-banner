@@ -6,7 +6,6 @@ import {
   TopSecretStyle,
   UnclassifiedStyle,
 } from './classification';
-import { TOP_SECRET } from '../securitybanner/securitybanner.stories';
 
 describe('GetBannerStyle', () => {
   test('NoParams', () => {
