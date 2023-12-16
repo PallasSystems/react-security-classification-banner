@@ -5,7 +5,15 @@ import { ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from '../country';
 import { HandlingInstruction } from '../handlingInstructions';
 
 /**
+ * The Security Classification information.
  *
+ * @param originatingEntity
+ * @param classification
+ * @param handlingInstruction
+ * @param descriptors
+ * @param codeWords
+ * @param nationalityCaveat
+ * @param releaseabilityMarking
  */
 export type SecurityClassification = {
   originatingEntity?: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2;

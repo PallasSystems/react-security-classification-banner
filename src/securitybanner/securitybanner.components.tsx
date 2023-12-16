@@ -1,10 +1,11 @@
 import React, { FC, useMemo } from 'react';
 
-import { SecurityBannerProps } from './securitybanner.types';
 import { GetBannerStyle, GetClassificationText } from '../classification';
-import { GetEyesOnly, GetOriginatingNation } from '../country';
+import { GetNationalityCaveatText, GetOriginatingNationText } from '../country';
 import { GetDescriptorText } from '../descriptors';
 import { GetHandlingInstructionsText } from '../handlingInstructions';
+
+import type { SecurityBannerProps } from './securitybanner.types';
 import { GetCodeWordText, GetSecurityClassification, GetUpToText } from './securitybanner.utils';
 
 export const SecurityBanner: FC<SecurityBannerProps> = ({ records, style, upTo }) => {
@@ -19,7 +20,7 @@ export const SecurityBanner: FC<SecurityBannerProps> = ({ records, style, upTo }
   );
   //
   const originating = useMemo(
-    () => GetOriginatingNation(record.classification, record.originatingEntity),
+    () => GetOriginatingNationText(record.classification, record.originatingEntity),
     [record.originatingEntity, record.classification],
   );
   //
@@ -39,7 +40,7 @@ export const SecurityBanner: FC<SecurityBannerProps> = ({ records, style, upTo }
   );
   //
   const eyesOnlyText = useMemo(
-    () => GetEyesOnly(record.classification, record.nationalityCaveat),
+    () => GetNationalityCaveatText(record.classification, record.nationalityCaveat),
     [record.codeWords, record.classification],
   );
   // Process the supplied data to work out if we should have an UPTO Label on the banner
