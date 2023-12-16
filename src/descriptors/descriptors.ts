@@ -73,3 +73,31 @@ export const GetDescriptorText = (classification?: string, descriptors?: Officia
 
   return result;
 };
+
+/**
+ * This will create a non duplicate descriptor merge of the supplied values.
+ *
+ * @param original list of descriptors to be merged
+ * @param toMerge list of descriptors to be merged
+ * @returns an empty array or a merge of the supplied values.
+ */
+export const MergeDescriptors = (
+  original?: OfficialDescriptors[] | Descriptors[],
+  toMerge?: OfficialDescriptors[] | Descriptors[],
+): Descriptors[] => {
+  const results: Descriptors[] = [];
+
+  if (original) {
+    original.forEach((value) => {
+      results.push(value);
+    });
+  }
+
+  if (toMerge) {
+    toMerge.forEach((value) => {
+      results.push(value);
+    });
+  }
+
+  return results.filter((item, idx) => results.indexOf(item) === idx);
+};
