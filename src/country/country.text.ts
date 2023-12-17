@@ -7,10 +7,7 @@ import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisati
  * @param values
  * @returns
  */
-export const GetNationalityCaveatText = (
-  classification?: string,
-  values?: Organisation[] | ISO_3166_1_ALPHA3[] | ISO_3166_1_ALPHA2[],
-) => {
+export const GetNationalityCaveatText = (classification?: string, values?: CountryOrOrgProp[]) => {
   let result = '';
 
   values?.forEach((value: CountryOrOrgProp) => {
