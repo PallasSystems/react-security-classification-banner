@@ -1,10 +1,10 @@
-import type { ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './country.types';
+import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './CountryOrOrgProp.types';
 
-export const IsUK = (value: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2) => {
+export const IsUK = (value: CountryOrOrgProp) => {
   return value === 'UK' || value === 'GB' || value === 'GBR';
 };
 
-export const IsOrganisation = (value: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2) => {
+export const IsOrganisation = (value: CountryOrOrgProp) => {
   return value === 'EU' || value === 'NATO' || value === 'FIVE EYES';
 };
 
@@ -13,7 +13,7 @@ export const IsOrganisation = (value: Organisation | ISO_3166_1_ALPHA3 | ISO_316
  * @param value
  * @returns
  */
-export const GetISO3166Alpha3 = (value?: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2): ISO_3166_1_ALPHA3[] => {
+export const GetISO3166Alpha3 = (value?: CountryOrOrgProp): ISO_3166_1_ALPHA3[] => {
   let result: ISO_3166_1_ALPHA3[] = [];
 
   if (value) {

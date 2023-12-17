@@ -1,16 +1,16 @@
 import { GetISO3166Alpha3FromISO3166Alpha2, IsOrganisation } from './country.reference';
-import type { ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './country.types';
+import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './country.types';
 
-export const GetOrgAndCountry = (value?: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2) => {
-  const result: { org?: Organisation; country?: ISO_3166_1_ALPHA3 } = {};
+export const GetOrgAndCountryOrOrgProp = (value?: CountryOrOrgProp) => {
+  const result: { org?: Organisation; CountryOrOrgProp?: ISO_3166_1_ALPHA3 } = {};
 
   if (value) {
     if (IsOrganisation(value)) {
       result.org = value as Organisation;
     } else if (value.length === 3) {
-      result.country = value as ISO_3166_1_ALPHA3;
+      result.CountryOrOrgProp = value as ISO_3166_1_ALPHA3;
     } else {
-      result.country = GetISO3166Alpha3FromISO3166Alpha2(value as ISO_3166_1_ALPHA2);
+      result.CountryOrOrgProp = GetISO3166Alpha3FromISO3166Alpha2(value as ISO_3166_1_ALPHA2);
     }
   }
 
@@ -26,9 +26,9 @@ export const GetOrgsAndCountries = (values?: Organisation[] | ISO_3166_1_ALPHA3[
   const result: { orgs: Organisation[]; countries: ISO_3166_1_ALPHA3[] } = { orgs: [], countries: [] };
 
   values?.forEach((value) => {
-    const converted = GetOrgAndCountry(value);
-    if (converted.country) {
-      result.countries.push(converted.country);
+    const converted = GetOrgAndCountryOrOrgProp(value);
+    if (converted.CountryOrOrgProp) {
+      result.countries.push(converted.CountryOrOrgProp);
     }
 
     if (converted.org) {
@@ -48,35 +48,32 @@ export const GetOrgsAndCountries = (values?: Organisation[] | ISO_3166_1_ALPHA3[
  * @param toMerge Organisation, Alpha3 ot Alpha 2 representing the handling entity of a record
  * @return undefined if they can't be merged or a value if there is one or they match
  */
-export const MergeHandlingNation = (
-  original?: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2,
-  toMerge?: Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2,
-) => {
-  const originalSep = GetOrgAndCountry(original);
-  const toMergeSep = GetOrgAndCountry(toMerge);
+export const MergeHandlingNation = (original?: CountryOrOrgProp, toMerge?: CountryOrOrgProp) => {
+  const originalSep = GetOrgAndCountryOrOrgProp(original);
+  const toMergeSep = GetOrgAndCountryOrOrgProp(toMerge);
 
-  let result: undefined | Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2 = undefined;
+  let result: undefined | CountryOrOrgProp = undefined;
 
-  if (originalSep.country) {
-    if (toMergeSep.country) {
+  if (originalSep.CountryOrOrgProp) {
+    if (toMergeSep.CountryOrOrgProp) {
       // if we have 2 countries which match we can return a Originating Entity
-      result = originalSep.country === toMergeSep.country ? originalSep.country : undefined;
+      result = originalSep.CountryOrOrgProp === toMergeSep.CountryOrOrgProp ? originalSep.CountryOrOrgProp : undefined;
     } else if (!toMergeSep.org) {
-      // if there is no organisation associated with the toMerge we can return the country
+      // if there is no organisation associated with the toMerge we can return the CountryOrOrgProp
       // record from original.
-      result = originalSep.country;
+      result = originalSep.CountryOrOrgProp;
     }
   } else if (originalSep.org) {
     if (toMergeSep.org) {
       // if we have 2 orgs which match we can return a Originating Entity
       result = originalSep.org === toMergeSep.org ? originalSep.org : undefined;
-    } else if (!toMergeSep.country) {
-      // if there is no country associated with the toMerge we can return the org
+    } else if (!toMergeSep.CountryOrOrgProp) {
+      // if there is no CountryOrOrgProp associated with the toMerge we can return the org
       // record
       result = originalSep.org;
     }
-  } else if (toMergeSep.country) {
-    result = toMergeSep.country;
+  } else if (toMergeSep.CountryOrOrgProp) {
+    result = toMergeSep.CountryOrOrgProp;
   } else if (toMergeSep.org) {
     result = toMergeSep.org;
   }
