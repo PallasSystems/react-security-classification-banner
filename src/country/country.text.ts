@@ -1,5 +1,5 @@
 import { GetISO3166Alpha3FromISO3166Alpha2, IsOrganisation, IsUK } from './country.reference';
-import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './country.types';
+import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3 } from './country.types';
 
 /**
  *
