@@ -1,4 +1,4 @@
-import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './CountryOrOrgProp.types';
+import type { CountryOrOrgProp, ISO_3166_1_ALPHA2, ISO_3166_1_ALPHA3, Organisation } from './country.types';
 
 export const IsUK = (value: CountryOrOrgProp) => {
   return value === 'UK' || value === 'GB' || value === 'GBR';
