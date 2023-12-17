@@ -19,7 +19,7 @@ const GetClassificationCode = (): string => {
     'const SecurityBannerPage: FC = () => {\n' +
     '\treturn (\n' +
     "\t\t<main role={'main'} className={'flex-shrink-0'}>\n" +
-    "\t\t\t<SecurityBanner classification={'OFFICIAL'} />\n" +
+    "\t\t\t<SecurityBanner records={{ classification: 'OFFICIAL' }} />\n" +
     '\t\t</main>\n' +
     '\t);\n' +
     '};'
@@ -56,7 +56,7 @@ const ApiClassificationPage: FC<ApiPageProperties> = ({ footerProps, navBarProps
           <p>Below we have provided an example of the setting being used with the library.</p>
         </Row>
         <Row>
-          <SecurityBanner classification={'OFFICIAL'} />
+          <SecurityBanner records={{ classification: 'OFFICIAL' }} />
         </Row>
         <Row>
           <h3>Source Code</h3>

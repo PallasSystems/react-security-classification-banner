@@ -51,9 +51,9 @@ const SimpleBannerExamplesComponent: FC = () => {
       </Row>
       <Row>
         <SecurityBanner />
-        <SecurityBanner classification={'OFFICIAL'} />
-        <SecurityBanner classification={'SECRET'} />
-        <SecurityBanner classification={'TOP SECRET'} />
+        <SecurityBanner records={{ classification: 'OFFICIAL' }} />
+        <SecurityBanner records={{ classification: 'SECRET' }} />
+        <SecurityBanner records={{ classification: 'TOP SECRET' }} />
       </Row>
       <Row>
         <h5>Source Code</h5>

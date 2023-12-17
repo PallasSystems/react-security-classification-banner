@@ -28,7 +28,7 @@ export const GetCodeWordText = (classification?: string, codewords?: string[]) =
  * @returns the string 'Contains'
  */
 export const I18nUpToText = () => {
-  return 'Contains information up to';
+  return 'CONTAINS INFORMATION UP TO';
 };
 
 /**

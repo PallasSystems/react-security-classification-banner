@@ -11,22 +11,22 @@ import { ApiPageProperties } from '../api.types';
 
 // For code highlighting
 import 'prismjs/themes/prism.min.css';
-import { ApiEnumTableConfiguration } from '../api.data';
-import { OfficialDescriptorColumnDefData } from './OfficialDescriptors.data';
+import { ApiTableConfiguration } from '../api.data';
+import { SecurityClassificationColumnDefData } from './SecurityBannerProps.data';
 
-const GetOfficialDescriptorsCode = (): string => {
+const GetSecurityClassificationCode = (): string => {
   return (
     'const SecurityBannerPage: FC = () => {\n' +
     '\treturn (\n' +
     "\t\t<main role={'main'} className={'flex-shrink-0'}>\n" +
-    "\t\t\t<SecurityBanner records={{ classification: 'OFFICIAL', descriptors: ['SENSITIVE', 'LEGAL'] }} />\n" +
+    "\t\t\t<SecurityBanner records={{ originatingEntity: 'NATO', classification:'SECRET', descriptors: ['COMMERCIAL'], nationalityCaveat:['NATO'] }} upTo={true} />\n" +
     '\t\t</main>\n' +
     '\t);\n' +
     '};'
   );
 };
 
-const ApiOfficialDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
+const ApSecurityBannerPropsPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
   useEffect(() => {
     Prism.highlightAll();
   });
@@ -41,13 +41,13 @@ const ApiOfficialDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBar
       />
       <Container id='intro' className={'my-2'}>
         <Row>
-          <h1>OfficialDescriptors</h1>
+          <h1>SecurityBannerProps</h1>
         </Row>
         <Row>
-          <p>The OfficialDescriptors type operates as an enumerate and has a limited selection of allowed values.</p>
+          <p>Information required to define a the table columns and data mapppings.</p>
         </Row>
         <Row>
-          <RBTable data={OfficialDescriptorColumnDefData} {...ApiEnumTableConfiguration} />
+          <RBTable data={SecurityClassificationColumnDefData} {...ApiTableConfiguration} />
         </Row>
         <Row>
           <h2>Example</h2>
@@ -56,14 +56,22 @@ const ApiOfficialDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBar
           <p>Below we have provided an example of the setting being used with the library.</p>
         </Row>
         <Row>
-          <SecurityBanner records={{ classification: 'OFFICIAL', descriptors: ['SENSITIVE', 'LEGAL'] }} />
+          <SecurityBanner
+            records={{
+              originatingEntity: 'NATO',
+              classification: 'SECRET',
+              descriptors: ['COMMERCIAL'],
+              nationalityCaveat: ['NATO'],
+            }}
+            upTo={true}
+          />
         </Row>
         <Row>
           <h3>Source Code</h3>
         </Row>
         <Row>
           <pre className={'language-javascript'}>
-            <code>{GetOfficialDescriptorsCode()}</code>
+            <code>{GetSecurityClassificationCode()}</code>
           </pre>
         </Row>
       </Container>
@@ -72,4 +80,4 @@ const ApiOfficialDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBar
   );
 };
 
-export { ApiOfficialDescriptorsPage };
+export { ApSecurityBannerPropsPage };

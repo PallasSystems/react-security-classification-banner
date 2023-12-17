@@ -10,7 +10,7 @@ import { GetCodeWordText, GetSecurityClassification, GetUpToText } from './secur
 
 export const SecurityBanner: FC<SecurityBannerProps> = ({ records, style, upTo }) => {
   // convert an array into a single record
-  const record = useMemo(() => GetSecurityClassification(records), [records]);
+  const record = useMemo(() => GetSecurityClassification(records ?? []), [records]);
   // Retrieve
   const styles = useMemo(() => GetBannerStyle(record.classification, style), [record.classification, style]);
   // Classification text
@@ -44,7 +44,7 @@ export const SecurityBanner: FC<SecurityBannerProps> = ({ records, style, upTo }
     [record.codeWords, record.classification],
   );
   // Process the supplied data to work out if we should have an UPTO Label on the banner
-  const upToText = useMemo(() => GetUpToText(records, upTo), [records, upTo]);
+  const upToText = useMemo(() => GetUpToText(records ?? [], upTo), [records, upTo]);
 
   return (
     <div style={styles}>

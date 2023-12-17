@@ -36,7 +36,7 @@ describe('GetClassificationText', () => {
   });
 
   test('Different Classifications non application descriptors', () => {
-    const descriptors = ['LEGAL', 'PERONSAL'];
+    const descriptors = ['LEGAL', 'PERSONAL'];
 
     expect(GetClassificationText('OFFICIAL', descriptors)).toEqual('OFFICIAL');
     expect(GetClassificationText('SECRET', descriptors)).toEqual('SECRET');
@@ -44,7 +44,7 @@ describe('GetClassificationText', () => {
   });
 
   test('Different Classifications SENSITIVE descriptors', () => {
-    const descriptors = ['LEGAL', 'PERONSAL', 'SENSITIVE'];
+    const descriptors = ['LEGAL', 'PERSONAL', 'SENSITIVE'];
 
     expect(GetClassificationText('OFFICIAL', descriptors)).toEqual('OFFICIAL-SENSITIVE');
     expect(GetClassificationText('SECRET', descriptors)).toEqual('SECRET');

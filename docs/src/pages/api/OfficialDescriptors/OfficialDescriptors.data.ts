@@ -12,7 +12,7 @@ export const OfficialDescriptorColumnDefData: ApiEnumTableEntry[] = [
       'Information related to staff performance, well-being or personal data; for example, employment contracts, annual appraisals, or medical information. This information should only be shared with named individuals on a need-to-know basis. The information creator’s permission should be sought before this information is circulated further, and in certain circumstances, the staff member in question’s permission should also be sought.',
   },
   {
-    field: 'PERONSAL DATA',
+    field: 'PERSONAL DATA',
     description:
       'Information relating to an identified or identifiable living individual.  Where the information relates to a member of staff (including their performance), use the HR / Management descriptor (see above) instead.',
   },
@@ -22,7 +22,7 @@ export const OfficialDescriptorColumnDefData: ApiEnumTableEntry[] = [
       'Information that may be commercially damaging to your organisation or to a commercial partner if improperly accessed, or which is subject to terms of commercial confidentiality. If the information could have a material impact on financial markets, use the MARKET-SENSITIVE descriptor (see above) instead.',
   },
   {
-    field: 'PERONSAL',
+    field: 'PERSONAL',
     description:
       'Information that may be commercially damaging to your organisation or to a commercial partner if improperly accessed, or which is subject to terms of commercial confidentiality. If the information could have a material impact on financial markets, use the MARKET-SENSITIVE descriptor (see above) instead.',
   },

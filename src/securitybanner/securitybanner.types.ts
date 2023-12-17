@@ -29,7 +29,7 @@ export type SecurityClassification = {
  *
  */
 export type SecurityBannerProps = {
-  records: SecurityClassification | SecurityClassification[];
+  records?: SecurityClassification | SecurityClassification[];
   style?: CSSProperties;
   upTo?: boolean;
 };
