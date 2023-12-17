@@ -82,6 +82,6 @@ describe('MergeClassifications', () => {
   });
 
   test('Have toMerge at Above with TS and Undefined', () => {
-    expect(MergeClassifications('TOP SECRET', undefined)).toEqual('TOP SECRET');
+    expect(MergeClassifications('TOP SECRET')).toEqual('TOP SECRET');
   });
 });
