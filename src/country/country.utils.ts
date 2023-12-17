@@ -22,7 +22,7 @@ export const GetOrgAndCountryOrOrgProp = (value?: CountryOrOrgProp) => {
  * @param values
  * @returns
  */
-export const GetOrgsAndCountries = (values?: Organisation[] | ISO_3166_1_ALPHA3[] | ISO_3166_1_ALPHA2[]) => {
+export const GetOrgsAndCountries = (values?: CountryOrOrgProp[]) => {
   const result: { orgs: Organisation[]; countries: ISO_3166_1_ALPHA3[] } = { orgs: [], countries: [] };
 
   values?.forEach((value) => {
@@ -88,11 +88,8 @@ export const MergeHandlingNation = (original?: CountryOrOrgProp, toMerge?: Count
  * @param toMerge Organisation, Alpha3 ot Alpha 2 representing the nationality caveat to be applied.
  * @returns empty array if nothing is to be applied
  */
-export const MergeNationalityCaveat = (
-  original?: Organisation[] | ISO_3166_1_ALPHA3[] | ISO_3166_1_ALPHA2[],
-  toMerge?: Organisation[] | ISO_3166_1_ALPHA3[] | ISO_3166_1_ALPHA2[],
-) => {
-  let results: Organisation[] | ISO_3166_1_ALPHA3[] | ISO_3166_1_ALPHA2[] = [];
+export const MergeNationalityCaveat = (original?: CountryOrOrgProp[], toMerge?: CountryOrOrgProp[]) => {
+  let results: CountryOrOrgProp[] = [];
   //
   const originalSep = GetOrgsAndCountries(original);
   const toMergeSep = GetOrgsAndCountries(toMerge);
