@@ -58,7 +58,6 @@ export const GetSecurityClassification = (
         result.classification = MergeClassifications(result.classification, value.classification);
         result.descriptors = MergeDescriptors(result.descriptors, value.descriptors);
         result.nationalityCaveat = MergeNationalityCaveat(result.nationalityCaveat, value.nationalityCaveat);
-        //result.releaseabilityMarking = MergeCountryCodes(result.nationalityCaveat, value.nationalityCaveat);
       });
     }
   } else {
