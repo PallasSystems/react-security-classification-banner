@@ -25,7 +25,19 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
           <h1>React Classification Banner</h1>
         </Row>
         <Row className={'my-2'}>
-          <h5>{projectProps.description}</h5>
+          <h5>
+            A library to generate UK Security Classification Banners based on{' '}
+            <a href='https://www.gov.uk/government/publications/government-security-classifications/government-security-classifications-policy-html'>
+              UK Government Guidance
+            </a>
+            .
+          </h5>
+          <br></br>
+          <h5>
+            The UK has 3 Classification levels and various rules on handling instructions, this library provides a TSX
+            Component which will generate a banner in the correct colours, with text laid out correctly and
+            accessibility features incorporated.
+          </h5>
         </Row>
 
         <Row>
