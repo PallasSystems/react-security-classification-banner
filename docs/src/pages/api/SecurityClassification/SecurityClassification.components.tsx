@@ -19,7 +19,7 @@ const GetSecurityClassificationCode = (): string => {
     'const SecurityBannerPage: FC = () => {\n' +
     '\treturn (\n' +
     "\t\t<main role={'main'} className={'flex-shrink-0'}>\n" +
-    "\t\t\t<SecurityBanner originatingEntity={'NATO'} classification={'SECRET'} descriptors={['COMMERCIAL']} nationalityCaveat={['NATO']} />\n" +
+    "\t\t\t<SecurityBanner records={{ originatingEntity: 'NATO', classification:'SECRET', descriptors: ['COMMERCIAL'], nationalityCaveat:['NATO'] }} />\n" +
     '\t\t</main>\n' +
     '\t);\n' +
     '};'
@@ -57,10 +57,12 @@ const ApiSecurityClassificationPage: FC<ApiPageProperties> = ({ footerProps, nav
         </Row>
         <Row>
           <SecurityBanner
-            originatingEntity={'NATO'}
-            classification={'SECRET'}
-            descriptors={['COMMERCIAL']}
-            nationalityCaveat={['NATO']}
+            records={{
+              originatingEntity: 'NATO',
+              classification: 'SECRET',
+              descriptors: ['COMMERCIAL'],
+              nationalityCaveat: ['NATO'],
+            }}
           />
         </Row>
         <Row>

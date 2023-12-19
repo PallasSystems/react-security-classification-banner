@@ -19,7 +19,7 @@ const GetDescriptorsCode = (): string => {
     'const SecurityBannerPage: FC = () => {\n' +
     '\treturn (\n' +
     "\t\t<main role={'main'} className={'flex-shrink-0'}>\n" +
-    "\t\t\t<SecurityBanner classification={'SECRET'} descriptors={['COMMERCIAL']} />\n" +
+    "\t\t\t<SecurityBanner records={{ classification: 'SECRET', descriptors: ['COMMERCIAL'] }} />\n" +
     '\t\t</main>\n' +
     '\t);\n' +
     '};'
@@ -56,7 +56,7 @@ const ApiDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
           <p>Below we have provided an example of the setting being used with the library.</p>
         </Row>
         <Row>
-          <SecurityBanner classification={'SECRET'} descriptors={['COMMERCIAL']} />
+          <SecurityBanner records={{ classification: 'SECRET', descriptors: ['COMMERCIAL'] }} />
         </Row>
         <Row>
           <h3>Source Code</h3>

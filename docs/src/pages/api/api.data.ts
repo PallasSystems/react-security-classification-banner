@@ -8,13 +8,21 @@ import { ApiDescriptorsPage } from './Descriptors';
 import { ApiHandlingInstructionPage } from './HandlingInstruction';
 import { ApiOfficialDescriptorsPage } from './OfficialDescriptors';
 import { ApiOrganisationPage } from './Organisation';
+import { ApSecurityBannerPropsPage } from './SecurityBannerProps';
 
 export const ApiTablePageData: ApiPage[] = [
   {
     link: '/api/securityclassification',
-    text: 'SecurityClassification Property',
+    text: 'SecurityClassification Record',
     page: (data: ApiPageProperties): ReactNode => {
       return ApiSecurityClassificationPage(data);
+    },
+  },
+  {
+    link: '/api/securitybannerprops',
+    text: 'SecurityBannerProps',
+    page: (data: ApiPageProperties): ReactNode => {
+      return ApSecurityBannerPropsPage(data);
     },
   },
 ];

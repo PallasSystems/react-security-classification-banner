@@ -29,7 +29,7 @@ export type Descriptors =
    * MARKET-SENSITIVE descriptor (see above) instead.
    */
   | 'COMMERCIAL'
-  | 'PERONSAL'
+  | 'PERSONAL'
   | 'SENSITIVE'
   /**
    * Information that exists for the purpose of giving or receiving legal advice and is

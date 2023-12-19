@@ -1,3 +1,6 @@
+/** Combined type to make it easier to support */
+export type CountryOrOrgProp = Organisation | ISO_3166_1_ALPHA3 | ISO_3166_1_ALPHA2;
+
 export type Organisation = 'EU' | 'NATO' | 'FIVE EYES';
 
 export type ISO_3166_1_ALPHA3 =
