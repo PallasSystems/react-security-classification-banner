@@ -32,43 +32,45 @@ const ApiDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
   });
 
   return (
-    <main role={'main'}>
+    <>
       <BannerNavBar
         {...navBarProps}
         prefixRow={() => {
           return <SecurityBanner />;
         }}
       />
-      <Container id='intro' className={'my-2'}>
-        <Row>
-          <h1>Descriptors</h1>
-        </Row>
-        <Row>
-          <p>The Descriptors type operates as an enumerate and has a limited selection of allowed values.</p>
-        </Row>
-        <Row>
-          <RBTable data={DescriptorColumnDefData} {...ApiEnumTableConfiguration} />
-        </Row>
-        <Row>
-          <h2>Example</h2>
-        </Row>
-        <Row>
-          <p>Below we have provided an example of the setting being used with the library.</p>
-        </Row>
-        <Row>
-          <SecurityBanner records={{ classification: 'SECRET', descriptors: ['COMMERCIAL'] }} />
-        </Row>
-        <Row>
-          <h3>Source Code</h3>
-        </Row>
-        <Row>
-          <pre className={'language-javascript'}>
-            <code>{GetDescriptorsCode()}</code>
-          </pre>
-        </Row>
-      </Container>
-      <Footer {...footerProps} />
-    </main>
+      <main className={'h-100 flex-grow-1'} role={'main'}>
+        <Container fluid id={'descriptors.container'} className={'content'}>
+          <Row>
+            <h1>Descriptors</h1>
+          </Row>
+          <Row>
+            <p>The Descriptors type operates as an enumerate and has a limited selection of allowed values.</p>
+          </Row>
+          <Row>
+            <RBTable data={DescriptorColumnDefData} {...ApiEnumTableConfiguration} />
+          </Row>
+          <Row>
+            <h2>Example</h2>
+          </Row>
+          <Row>
+            <p>Below we have provided an example of the setting being used with the library.</p>
+          </Row>
+          <Row>
+            <SecurityBanner records={{ classification: 'SECRET', descriptors: ['COMMERCIAL'] }} />
+          </Row>
+          <Row>
+            <h3>Source Code</h3>
+          </Row>
+          <Row>
+            <pre className={'language-javascript'}>
+              <code>{GetDescriptorsCode()}</code>
+            </pre>
+          </Row>
+        </Container>
+        <Footer {...footerProps} />
+      </main>
+    </>
   );
 };
 

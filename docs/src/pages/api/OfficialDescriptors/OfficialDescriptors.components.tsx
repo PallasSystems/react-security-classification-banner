@@ -32,43 +32,45 @@ const ApiOfficialDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBar
   });
 
   return (
-    <main role={'main'}>
+    <>
       <BannerNavBar
         {...navBarProps}
         prefixRow={() => {
           return <SecurityBanner />;
         }}
       />
-      <Container id='intro' className={'my-2'}>
-        <Row>
-          <h1>OfficialDescriptors</h1>
-        </Row>
-        <Row>
-          <p>The OfficialDescriptors type operates as an enumerate and has a limited selection of allowed values.</p>
-        </Row>
-        <Row>
-          <RBTable data={OfficialDescriptorColumnDefData} {...ApiEnumTableConfiguration} />
-        </Row>
-        <Row>
-          <h2>Example</h2>
-        </Row>
-        <Row>
-          <p>Below we have provided an example of the setting being used with the library.</p>
-        </Row>
-        <Row>
-          <SecurityBanner records={{ classification: 'OFFICIAL', descriptors: ['SENSITIVE', 'LEGAL'] }} />
-        </Row>
-        <Row>
-          <h3>Source Code</h3>
-        </Row>
-        <Row>
-          <pre className={'language-javascript'}>
-            <code>{GetOfficialDescriptorsCode()}</code>
-          </pre>
-        </Row>
-      </Container>
-      <Footer {...footerProps} />
-    </main>
+      <main id={'official.descriptor.container'} className={'h-100 flex-grow-1'} role={'main'}>
+        <Container fluid id={'official.descriptor.container'} className={'content'}>
+          <Row>
+            <h1>OfficialDescriptors</h1>
+          </Row>
+          <Row>
+            <p>The OfficialDescriptors type operates as an enumerate and has a limited selection of allowed values.</p>
+          </Row>
+          <Row>
+            <RBTable data={OfficialDescriptorColumnDefData} {...ApiEnumTableConfiguration} />
+          </Row>
+          <Row>
+            <h2>Example</h2>
+          </Row>
+          <Row>
+            <p>Below we have provided an example of the setting being used with the library.</p>
+          </Row>
+          <Row>
+            <SecurityBanner records={{ classification: 'OFFICIAL', descriptors: ['SENSITIVE', 'LEGAL'] }} />
+          </Row>
+          <Row>
+            <h3>Source Code</h3>
+          </Row>
+          <Row>
+            <pre className={'language-javascript'}>
+              <code>{GetOfficialDescriptorsCode()}</code>
+            </pre>
+          </Row>
+        </Container>
+        <Footer {...footerProps} />
+      </main>
+    </>
   );
 };
 

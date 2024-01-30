@@ -12,23 +12,25 @@ import { GettingStartedUsageComponent } from './gettingStarted.usage.components'
 
 const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, navBarProps }) => {
   return (
-    <main role={'main'}>
+    <>
       <BannerNavBar
         {...navBarProps}
         prefixRow={() => {
           return <SecurityBanner />;
         }}
       />
-      <Container id='intro'>
-        <Row className={'my-2'}>
-          <GettingStartedInstallComponent />
-        </Row>
-        <Row className={'my-2'}>
-          <GettingStartedUsageComponent />
-        </Row>
-      </Container>
-      <Footer {...footerProps} />
-    </main>
+      <main className={'h-100 flex-grow-1'} role={'main'}>
+        <Container fluid id={'getting.started.container'} className={'content'}>
+          <Row className={'my-2'}>
+            <GettingStartedInstallComponent />
+          </Row>
+          <Row className={'my-2'}>
+            <GettingStartedUsageComponent />
+          </Row>
+        </Container>
+        <Footer {...footerProps} />
+      </main>
+    </>
   );
 };
 
