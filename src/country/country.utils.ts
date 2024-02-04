@@ -93,6 +93,8 @@ export const MergeNationalityCaveat = (original?: CountryOrOrgProp[], toMerge?: 
   //
   const originalSep = GetOrgsAndCountries(original);
   const toMergeSep = GetOrgsAndCountries(toMerge);
+  console.log('originalSep: ' + JSON.stringify(originalSep));
+  console.log('toMerge: ' + JSON.stringify(toMergeSep));
 
   if (originalSep.countries.length > 0 || toMergeSep.countries.length > 0) {
     if (originalSep.countries.length > 0) {
@@ -124,7 +126,7 @@ export const MergeNationalityCaveat = (original?: CountryOrOrgProp[], toMerge?: 
         results = originalSep.orgs;
       }
     } else {
-      results = toMergeSep.countries;
+      results = toMergeSep.orgs;
     }
   }
 
