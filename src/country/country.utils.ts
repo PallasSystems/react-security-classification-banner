@@ -93,22 +93,38 @@ export const MergeNationalityCaveat = (original?: CountryOrOrgProp[], toMerge?: 
   //
   const originalSep = GetOrgsAndCountries(original);
   const toMergeSep = GetOrgsAndCountries(toMerge);
+  console.log('originalSep: ' + JSON.stringify(originalSep));
+  console.log('toMerge: ' + JSON.stringify(toMergeSep));
 
   if (originalSep.countries.length > 0 || toMergeSep.countries.length > 0) {
-    //
-    if (originalSep.countries.length < toMergeSep.countries.length) {
-      results = originalSep.countries;
-    } else if (originalSep.countries.length === toMergeSep.countries.length) {
-      results = originalSep.countries;
+    if (originalSep.countries.length > 0) {
+      if (toMergeSep.countries.length > 0) {
+        if (originalSep.countries.length < toMergeSep.countries.length) {
+          results = originalSep.countries;
+        } else if (originalSep.countries.length === toMergeSep.countries.length) {
+          results = originalSep.countries;
+        } else {
+          results = toMergeSep.countries;
+        }
+      } else {
+        results = originalSep.countries;
+      }
     } else {
       results = toMergeSep.countries;
     }
   } else if (originalSep.orgs.length > 0 || toMergeSep.orgs.length > 0) {
-    //
-    if (originalSep.orgs.length < toMergeSep.orgs.length) {
-      results = originalSep.orgs;
-    } else if (originalSep.orgs.length === toMergeSep.orgs.length) {
-      results = originalSep.countries;
+    if (originalSep.orgs.length > 0) {
+      if (toMergeSep.orgs.length > 0) {
+        if (originalSep.orgs.length < toMergeSep.orgs.length) {
+          results = originalSep.orgs;
+        } else if (originalSep.orgs.length === toMergeSep.orgs.length) {
+          results = originalSep.orgs;
+        } else {
+          results = toMergeSep.orgs;
+        }
+      } else {
+        results = originalSep.orgs;
+      }
     } else {
       results = toMergeSep.orgs;
     }

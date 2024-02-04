@@ -43,6 +43,43 @@ export const GetUpToText = (data: SecurityClassification | SecurityClassificatio
 };
 
 /**
+ * This function will merge 2 string arrays in a non duplicating fashion.
+ * @param a a string array to merge
+ * @param b a string array to merge
+ * @param predicate
+ * @returns an empty array if the supplied are empty or a concat array with no duplicates
+ */
+const MergeStringArray = (a: string[], b: string[], predicate = (a: string, b: string) => a === b) => {
+  const c = [...a]; // copy to avoid side effects
+  // add all items from B to copy C if they're not already present
+  b.forEach((bItem) => (c.some((cItem) => predicate(bItem, cItem)) ? null : c.push(bItem)));
+  return c;
+};
+
+/**
+ * This will merge 2 codeword listings, this will create a non duplicating concatation of the supplied string arrays.
+ *
+ * @param original codewords to be merged
+ * @param toMerge  codewords to be merged
+ * @returns an empty array or a concatation of the supplied arrays.
+ */
+export const MergeCodeWords = (original?: string[], toMerge?: string[]): string[] => {
+  let result: string[] = [];
+
+  if (original && original.length > 0) {
+    if (toMerge && toMerge.length > 0) {
+      result = MergeStringArray(original, toMerge);
+    } else {
+      result = original;
+    }
+  } else if (toMerge && toMerge.length > 0) {
+    result = toMerge;
+  }
+
+  return result;
+};
+
+/**
  *
  * @param data
  * @returns
@@ -57,6 +94,7 @@ export const GetSecurityClassification = (
         result.originatingEntity = MergeHandlingNation(result.originatingEntity, value.originatingEntity);
         result.classification = MergeClassifications(result.classification, value.classification);
         result.descriptors = MergeDescriptors(result.descriptors, value.descriptors);
+        result.codeWords = MergeCodeWords(result.codeWords, value.codeWords);
         result.nationalityCaveat = MergeNationalityCaveat(result.nationalityCaveat, value.nationalityCaveat);
       });
     }
