@@ -55,7 +55,7 @@ const MergeRecordsBannerExamplesComponent: FC = () => {
         <SecurityBanner
           records={[
             { classification: 'SECRET', codeWords: ['CODEWORD'] },
-            { classification: 'TOP SECRET', nationalityCaveat: ['GBR'] },
+            { classification: 'TOP SECRET', codeWords: ['WORDCODE'], nationalityCaveat: ['GBR'] },
           ]}
         />
       </Row>
