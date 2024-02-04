@@ -43,10 +43,19 @@ const CodeWordsBannerExamplesComponent: FC = () => {
       </Row>
       <Row>
         <p>
-          The React Classification Banner aims to provide a UK Security Classification banner which will default to the
-          most basic security classification banner. In this example we are showcasing the default behavour it the
-          table.
+          The React Classification Banner aims to provide a UK Security Classification banner, the standard includes the
+          concept of code words.
         </p>
+        <p>
+          Code words provide security cover for a particular asset or event and are commonly applied to SECRET and TOP
+          SECRET assets as a result the banner will not display code words for OFFICAL banners. The descriptor concept
+          is expected at OFFICIAL.
+        </p>
+        <p>
+          Government bodies will manage their code word listings and so no rules are applied to code words other than
+          ensuring they are non duplicating.
+        </p>
+        <p></p>
       </Row>
       <Row>
         <h3>Demonstration</h3>
