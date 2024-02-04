@@ -43,9 +43,9 @@ const MergeRecordsBannerExamplesComponent: FC = () => {
       </Row>
       <Row>
         <p>
-          The React Classification Banner aims to provide a UK Security Classification banner which will default to the
-          most basic security classification banner. In this example we are showcasing the default behavour it the
-          table.
+          The React Classification Banner aims to provide a UK Security Classification banner when a UX is handling
+          multiple classified assets. To support this the banner can be supplied an array of security classification
+          records and will merge the labels to provide a combined security banner.
         </p>
       </Row>
       <Row>
