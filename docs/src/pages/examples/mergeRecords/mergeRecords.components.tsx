@@ -39,7 +39,7 @@ const MergeRecordsBannerExamplesComponent: FC = () => {
   return (
     <Container>
       <Row>
-        <h2>Create Security Banners with Codewords</h2>
+        <h2>Create Security Banner from multiple security labels</h2>
       </Row>
       <Row>
         <p>

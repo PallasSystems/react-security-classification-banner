@@ -39,13 +39,17 @@ const NationalityCaveatBannerExamplesComponent: FC = () => {
   return (
     <Container>
       <Row>
-        <h2>Create Security Banners with Codewords</h2>
+        <h2>Create Security Banners with Nationality Caveats</h2>
       </Row>
       <Row>
         <p>
-          The React Classification Banner aims to provide a UK Security Classification banner which will default to the
-          most basic security classification banner. In this example we are showcasing the default behavour it the
-          table.
+          The React Classification Banner aims to provide a UK Security Classification banner, the standard includes the
+          concept of restricting access to information to specific countries or organisations and are known as
+          Nationality Caveats.
+        </p>
+        <p>
+          Nationality Caveats provide security cover for a particular asset or event and are commonly applied to SECRET
+          and TOP SECRET assets as a result the banner will not display nationality caveat for OFFICAL banners.
         </p>
       </Row>
       <Row>
