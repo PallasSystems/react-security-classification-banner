@@ -20,10 +20,10 @@ const ExamplesHeadPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps
       />
       <main className={'h-100 flex-grow-1'} role={'main'}>
         <Container fluid id={'examples.container'} className={'content'}>
-          <Row>
+          <Row className={'my-2 mx-1'}>
             <h1>Examples</h1>
           </Row>
-          <Row className={'mx-3'}>
+          <Row className={'my-2 mx-2'} style={{ height: '100%' }}>
             <ul>
               {ExamplePageData.map((value) => {
                 return (
@@ -37,8 +37,8 @@ const ExamplesHeadPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps
             </ul>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

@@ -29,8 +29,8 @@ const MissingPage: FC<MissingPageProperties> = ({ footerProps, navBarProps }) =>
             </Col>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

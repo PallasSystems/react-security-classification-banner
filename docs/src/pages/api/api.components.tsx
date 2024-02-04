@@ -59,8 +59,8 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
             </ul>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

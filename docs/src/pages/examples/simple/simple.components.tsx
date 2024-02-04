@@ -25,8 +25,8 @@ const SimpleBannerExamplesPage: FC<ExamplesPageProperties> = ({ footerProps, nav
         <Container fluid id={'simple.container'} className={'content'}>
           <SimpleBannerExamplesComponent />
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

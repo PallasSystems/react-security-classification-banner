@@ -76,8 +76,8 @@ const ApSecurityBannerPropsPage: FC<ApiPageProperties> = ({ footerProps, navBarP
             </pre>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

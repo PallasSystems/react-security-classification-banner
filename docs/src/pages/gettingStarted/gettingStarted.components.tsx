@@ -28,8 +28,8 @@ const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, nav
             <GettingStartedUsageComponent />
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

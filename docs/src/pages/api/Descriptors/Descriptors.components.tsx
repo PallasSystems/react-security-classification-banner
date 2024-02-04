@@ -68,8 +68,8 @@ const ApiDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBarProps })
             </pre>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

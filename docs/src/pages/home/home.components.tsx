@@ -68,8 +68,8 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
             <p>Current Version: {projectProps.version}</p>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };

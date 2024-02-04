@@ -75,8 +75,8 @@ const ApiSecurityClassificationPage: FC<ApiPageProperties> = ({ footerProps, nav
             </pre>
           </Row>
         </Container>
-        <Footer {...footerProps} />
       </main>
+      <Footer {...footerProps} />
     </>
   );
 };
