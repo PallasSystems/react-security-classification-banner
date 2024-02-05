@@ -7,6 +7,7 @@ import { SecurityBanner } from '@pallassystems/react-security-classification-ban
 
 // HomePage Properties
 import { HomePageProperties } from './home.types';
+import './home.css';
 
 // Package properties
 import projectProps from '../../../../package.json';
@@ -43,23 +44,29 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
 
           <Row>
             <Col>
-              <div className={'d-grid gap-2 my-2'}>
-                <LinkContainer to='/gettingStarted'>
-                  <Button variant='dark'>Getting Started</Button>
+              <div className={'d-grid gap-2 my-2 '}>
+                <LinkContainer to='/gettingStarted' style={{ minHeight: '4em' }}>
+                  <Button variant='dark'>
+                    <p className={'home_muti_line_btn'}>Getting Started</p>
+                  </Button>
                 </LinkContainer>
               </div>
             </Col>
             <Col>
               <div className={'d-grid gap-2 my-2'}>
-                <LinkContainer to='/api'>
-                  <Button variant='dark'>API</Button>
+                <LinkContainer to='/api' style={{ minHeight: '4em' }}>
+                  <Button variant='dark'>
+                    <p className={'home_btn'}>API</p>
+                  </Button>
                 </LinkContainer>
               </div>
             </Col>
             <Col>
               <div className={'d-grid gap-2 my-2'}>
-                <LinkContainer to='/examples'>
-                  <Button variant='dark'>Examples</Button>
+                <LinkContainer to='/examples' style={{ minHeight: '4em' }}>
+                  <Button variant='dark'>
+                    <p className={'home_btn'}>Examples</p>
+                  </Button>
                 </LinkContainer>
               </div>
             </Col>
