@@ -1,0 +1,19 @@
+p.home_btn {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0.75em;
+}
+
+p.home_muti_line_btn {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0.75em;
+}
+
+@media only screen and (max-width: 540px) {
+  p.home_muti_line_btn {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0em;
+  }
+}
