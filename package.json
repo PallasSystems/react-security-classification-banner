@@ -1,6 +1,6 @@
 {
   "name": "@pallassystems/react-security-classification-banner",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A library to generate  UK Security Classification Banners based on UK Government Guidance.",
   "homepage": "https://pallassystems.github.io/react-security-classification-banner",
   "keywords": [
