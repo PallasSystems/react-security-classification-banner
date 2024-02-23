@@ -18,7 +18,7 @@ const ApiHeadPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }) => {
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'api.container'} className={'content'}>
           <Row className={'my-2'}>
             <h1>API Reference</h1>

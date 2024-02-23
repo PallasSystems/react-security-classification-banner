@@ -39,7 +39,7 @@ const ApiOrganisationPage: FC<ApiPageProperties> = ({ footerProps, navBarProps }
           return <SecurityBanner />;
         }}
       />
-      <main id={'organisation.container'} className={'h-100 flex-grow-1'} role={'main'}>
+      <main id={'organisation.container'} className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'organisation.container'} className={'content'}>
           <Row>
             <h1>Organisation</h1>

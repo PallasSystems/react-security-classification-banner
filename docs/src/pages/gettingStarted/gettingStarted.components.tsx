@@ -19,7 +19,7 @@ const GettingStartedPage: FC<GettingStartedPageProperties> = ({ footerProps, nav
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'getting.started.container'} className={'content'}>
           <Row className={'my-2'}>
             <GettingStartedInstallComponent />

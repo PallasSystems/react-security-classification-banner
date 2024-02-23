@@ -39,7 +39,7 @@ const ApiOfficialDescriptorsPage: FC<ApiPageProperties> = ({ footerProps, navBar
           return <SecurityBanner />;
         }}
       />
-      <main id={'official.descriptor.container'} className={'h-100 flex-grow-1'} role={'main'}>
+      <main id={'official.descriptor.container'} className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'official.descriptor.container'} className={'content'}>
           <Row>
             <h1>OfficialDescriptors</h1>

@@ -21,7 +21,7 @@ const HomePage: FC<HomePageProperties> = ({ footerProps, navBarProps }) => {
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'home.container'} className={'text-center content'}>
           <Row className={'my-2'}>
             <h1>React Classification Banner</h1>
