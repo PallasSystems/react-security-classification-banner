@@ -18,7 +18,7 @@ const ExamplesHeadPage: FC<ExamplesPageProperties> = ({ footerProps, navBarProps
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'examples.container'} className={'content'}>
           <Row className={'my-2 mx-1'}>
             <h1>Examples</h1>

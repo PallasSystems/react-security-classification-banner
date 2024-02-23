@@ -16,7 +16,7 @@ const MissingPage: FC<MissingPageProperties> = ({ footerProps, navBarProps }) =>
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'missing.container'} className={'content text-center'}>
           <Row align='center' id={'Missing.Container.ImageRow'}>
             <Col className={'text-dark'} id={'Missing.Container.ImageRow.Coloumn'}>

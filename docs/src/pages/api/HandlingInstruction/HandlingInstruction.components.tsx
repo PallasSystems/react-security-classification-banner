@@ -39,7 +39,7 @@ const ApiHandlingInstructionPage: FC<ApiPageProperties> = ({ footerProps, navBar
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'handling.container'} className={'content'}>
           <Row>
             <h1>HandlingInstruction</h1>

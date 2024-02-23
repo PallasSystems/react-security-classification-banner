@@ -21,7 +21,7 @@ const SimpleBannerExamplesPage: FC<ExamplesPageProperties> = ({ footerProps, nav
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'simple.container'} className={'content'}>
           <SimpleBannerExamplesComponent />
         </Container>

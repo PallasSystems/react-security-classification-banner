@@ -39,7 +39,7 @@ const ApiClassificationPage: FC<ApiPageProperties> = ({ footerProps, navBarProps
           return <SecurityBanner />;
         }}
       />
-      <main className={'h-100 flex-grow-1'} role={'main'}>
+      <main className={'flex-grow-1'} role={'main'}>
         <Container fluid id={'classification.container'} className={'content'}>
           <Row>
             <h1>Classification</h1>
