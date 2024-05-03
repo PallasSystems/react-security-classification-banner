@@ -5,7 +5,7 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://pallassystems.github.io/react-security-classification-banner/',
+  base: 'https://rscb.pallas.uk/',
   resolve: {
     alias: [
       {
