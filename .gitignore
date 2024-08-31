@@ -3,6 +3,7 @@
 /docs/build
 /docs/dist
 /docs/lib
+/docs/public
 /docs/node_modules
 
 # dependencies
