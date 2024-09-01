@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as BannerDescriptorStories from './securitybanner.descriptors.stories';
+
+<Meta name='Descriptor Examples' of={BannerDescriptorStories} />
+
+# Create a Basic Security Banner
+
+The React Classification Banner aims to provide a UK Security Classification banner which will default to the most basic security classification banner. In this example we are showcasing the default behavour it the table.
+# Demonstration
+
+<Canvas of={BannerDescriptorStories.OFFICIAL_DESCRIPTORS} />
+
+# Source code
+
+```ts
+const BasicExampleComponent: FC<SecurityBannerProps[]> = ({records}) => {
+
+  // Generates a default instance of the banner
+  return (<SecurityBanner  records: {records} />);
+};
+```

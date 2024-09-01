@@ -1,0 +1,18 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { SecurityBanner } from '../securitybanner.components';
+
+const meta = {
+  title: 'react-uk-classification-banner/Banner',
+  component: SecurityBanner,
+  tags: ['autodocs'],
+} satisfies Meta<typeof SecurityBanner>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const OFFICIAL: Story = { args: { records: { classification: 'OFFICIAL' } } };
+
+export const SECRET: Story = { args: { records: { classification: 'SECRET' } } };
+
+export const TOP_SECRET: Story = { args: { records: { classification: 'TOP SECRET' } } };

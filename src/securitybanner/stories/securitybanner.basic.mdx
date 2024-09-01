@@ -1,0 +1,24 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as BannerBasicStories from './securitybanner.basic.stories';
+
+<Meta name='Basic Example' of={BannerBasicStories} />
+
+# Create a Basic table
+
+The React Bootstrap Table library aims to provide extensive configurability which can be disabled or customised to meet you needs. In this example we have disabled all optional parameters.
+
+# Demonstration
+
+<Canvas of={BannerBasicStories.Primary} />
+
+# Source code
+
+```ts
+const BasicExampleComponent: FC<SecurityBannerProps[]> = ({records}) => {
+
+  // Generates a default instance of the banner
+  return (<SecurityBanner  records: {records} />);
+};
+
+```
