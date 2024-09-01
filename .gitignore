@@ -6,6 +6,8 @@
 /docs/public
 /docs/node_modules
 
+/storybook-static 
+
 # dependencies
 /node_modules
 /.pnp
