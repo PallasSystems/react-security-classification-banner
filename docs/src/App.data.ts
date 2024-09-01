@@ -11,10 +11,10 @@ export const ExamplePageNavData: NavbarLinkProperty[] = [
     id: 'quick-example-page',
     text: 'Quick Examples',
     items: [
-      { path: '/examples/basic', id: 'react-bootstrap-table-table--basic-example', text: 'Basic Example', items: [] },
+      { path: '/examples/basic', id: 'react-uk-classification-banner-banner--basic-example', text: 'Basic Example', items: [] },
       {
         path: '/example/minimal',
-        id: 'react-bootstrap-table-table--minimal-example',
+        id: 'react-uk-classification-banner-banner--minimal-example',
         text: 'Minimal Example',
         items: [],
       },
@@ -26,23 +26,17 @@ export const ExamplePageNavData: NavbarLinkProperty[] = [
     text: 'Fundamentals',
     items: [
       {
-        path: '/examples/fundamentals/modifiedAccessorFN',
-        id: 'react-bootstrap-table-table--accessor-functions',
-        text: 'Making use of Accessor Functions',
+        path: '/examples/fundamentals/codewords',
+        id: 'react-uk-classification-banner-banner--codeword-examples',
+        text: 'Codeword Examples',
         items: [],
       },
       {
-        path: '/examples/fundamentals/modifiedCellFN',
-        id: 'react-bootstrap-table-table--modified-cell-functions',
-        text: 'Modifying Table Cells',
+        path: '/examples/fundamentals/descriptors',
+        id: 'react-uk-classification-banner-banner--descriptor-examples',
+        text: 'Descriptor Examples',
         items: [],
-      },
-      {
-        path: '/examples/fundamentals/modifiedHeaderFN',
-        id: 'react-bootstrap-table-table--modified-header-functions',
-        text: 'Modifying Table Headers',
-        items: [],
-      },
+      }
     ],
   },
   {

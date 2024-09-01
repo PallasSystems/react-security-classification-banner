@@ -25,7 +25,7 @@
     "paths": { "@pallassystems/react-security-classification-banner/*": ["../src/*"] }
   },
 
-  "include": ["src", "vite.config.ts"],
+  "include": ["src", "vite.config.ts", "../src"],
   "exclude": [
     "build",
     "dist",
