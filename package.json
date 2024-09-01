@@ -3,6 +3,7 @@
   "version": "1.1.8",
   "description": "A library to generate  UK Security Classification Banners based on UK Government Guidance.",
   "homepage": "https://rscb.pallas.uk",
+  "type": "module",
   "keywords": [
     "react",
     "security",
@@ -69,7 +70,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist ./coverage eslint_report.json stylelint_report.json junit.xml",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && tsc && npm run build:storybook",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
