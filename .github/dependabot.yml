@@ -1,15 +1,15 @@
 version: 2
 
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
-  - package-ecosystem: "npm"
-    directory: "/"
+      interval: 'monthly'
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
-  - package-ecosystem: "npm"
-    directory: "/docs/"
+      interval: 'monthly'
+  - package-ecosystem: 'npm'
+    directory: '/docs/'
     schedule:
-      interval: "daily"
+      interval: 'monthly'
