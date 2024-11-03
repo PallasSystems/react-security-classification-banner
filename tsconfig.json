@@ -39,6 +39,5 @@
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
     "**/*.md",
-    "**/rollup.config.js"
   ]
 }

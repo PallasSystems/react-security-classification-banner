@@ -74,10 +74,10 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist ./coverage eslint_report.json stylelint_report.json junit.xml",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && tsc && npm run build:storybook",
     "test": "jest",
-    "storybook": "storybook dev -p 6006 -s public",
-    "build-storybook": "storybook build -s public",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
     "analyse": "source-map-explorer 'build/static/js/*.js'",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
     "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
