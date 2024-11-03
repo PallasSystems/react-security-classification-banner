@@ -9,8 +9,8 @@
     "jsx": "react",
     "importHelpers": true,
     "isolatedModules": true,
-    "lib": ["ESNext", "DOM"],
-    "module": "CommonJS",
+    "lib": ["ES6", "DOM"],
+    "module": "ES6",
     "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -21,7 +21,7 @@
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": false,
-    "target": "ESNext",
+    "target": "ES5",
     "plugins": [
       {
         "name": "typescript-styled-plugin",
@@ -36,8 +36,10 @@
     "build",
     "dist",
     "node_modules",
-    "src/**/*.test.tsx",
+    "src/**/*.test*.tsx",
     "src/**/*.stories.tsx",
+    "src/**/*.test*.ts",
+    "src/**/*.stories.ts",
     "**/*.md",
     "**/rollup.config.js"
   ]
