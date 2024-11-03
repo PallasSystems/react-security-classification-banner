@@ -4,6 +4,9 @@
 /docs/dist
 /docs/lib
 /docs/node_modules
+/docs/public
+
+/storybook-static
 
 # dependencies
 /node_modules
