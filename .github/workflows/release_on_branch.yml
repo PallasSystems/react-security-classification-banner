@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-workflow-passing-data:
+  nodejs_npm_release_on_branch:
     uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_release_on_branch.yml@main
+    secrets: inherit
+  nodejs_npm_docs_release_on_branch:
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_docs_release_on_branch.yml@main
     secrets: inherit

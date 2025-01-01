@@ -1,12 +1,23 @@
 name: Build Verification of Node.JS project
 
 on:
+  create:
+    branches:
+      - 'release/*'
   push:
     branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
-  call-workflow-passing-data:
-    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_build_verification.yml@main
+  nodejs_npm_build_analysis:
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_build_analysis.yml@main
     secrets: inherit
+  nodejs_npm_docs_build_analysis:
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_docs_build_analysis.yml@main
+    secrets: inherit
+  nodejs_npm_check_version_support:
+    uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_check_version_support.yml@main
+    secrets: inherit
+
