@@ -6,22 +6,22 @@
     "declarationDir": "./dist/types",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "importHelpers": true,
     "isolatedModules": true,
     "lib": ["ES6", "DOM"],
-    "module": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": false,
-    "target": "ES5",
+    "target": "ES6",
     "plugins": [
       {
         "name": "typescript-styled-plugin",
@@ -31,17 +31,16 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [
     "build",
     "dist",
     "docs",
     "node_modules",
-    "src/**/*.test*.tsx",
     "src/**/*.stories.tsx",
-    "src/**/*.test*.ts",
     "src/**/*.stories.ts",
     "**/*.md",
-    "**/rollup.config.js"
   ]
 }

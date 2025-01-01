@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "lib": ["ES6", "DOM", "DOM.Iterable"],
+    "module": "ES6",
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "paths": { "@pallassystems/react-security-classification-banner/*": ["../src/*"] }
+    "paths": { "@pallassystems/website-core/*": ["../src/*"] }
   },
 
   "include": ["src"],
@@ -28,13 +28,11 @@
     "build",
     "dist",
     "node_modules",
-    "src/**/*.test.tsx",
+    "src/**/*.test*.tsx",
     "src/**/*.stories.tsx",
-    "../src/**/*.test.tsx",
+    "../src/**/*.test*.tsx",
     "../src/**/*.stories.tsx",
     "**/*.md",
     "**/rollup.config.js"
-  ],
-
-  "references": [{ "path": "./tsconfig.node.json" }]
+  ]
 }
