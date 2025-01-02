@@ -8,7 +8,6 @@ import { GettingStartedPageProperties } from './gettingStarted.types';
 import { Container, Row } from 'react-bootstrap';
 
 // Project dependencies
-import { SimpleBannerExamplesComponent } from '..';
 import projectProps from '../../../../package.json';
 // For code highlighting
 import 'prismjs/themes/prism.min.css';
@@ -22,6 +21,9 @@ const GettingStartedUsageComponent: FC = () => {
     Prism.highlightAll();
   });
 
+  const exampleStorybookLink = './storybook-static/iframe.html?id=' 
+    + 'react-uk-classification-banner-banner--minimal-example'
+    + '&viewMode=docs&shortcuts=false';
   return (
     <Container>
       <Row>
@@ -40,7 +42,13 @@ const GettingStartedUsageComponent: FC = () => {
         </pre>
       </Row>
       <Row>
-        <SimpleBannerExamplesComponent />
+      <iframe
+        className='embed-responsive-item'
+        src={exampleStorybookLink}
+        height='100%'
+        width='100%'
+        style={{ minHeight: '1150px' }}
+      />
       </Row>
     </Container>
   );
