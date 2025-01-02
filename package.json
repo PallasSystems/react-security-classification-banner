@@ -1,6 +1,6 @@
 {
   "name": "@pallassystems/react-security-classification-banner",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A library to generate  UK Security Classification Banners based on UK Government Guidance.",
   "homepage": "https://rscb.pallas.uk",
   "keywords": [
