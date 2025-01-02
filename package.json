@@ -73,8 +73,7 @@
     "analyse": "source-map-explorer 'build/static/js/*.js'",
     "eslint": "eslint --config eslint.config.mjs --output-file eslint_report.json --format json src/",
     "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
-    "lint": "npm run eslint && npm run stylelint",
-    "postpublish": "gh-pages -d docs/dist"
+    "lint": "npm run eslint && npm run stylelint"
   },
   "repository": {
     "type": "git",
