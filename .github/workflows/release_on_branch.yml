@@ -10,6 +10,19 @@ jobs:
   nodejs_npm_release_on_branch:
     uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_release_on_branch.yml@main
     secrets: inherit
+    permissions:
+      contents: write
+      actions: read
+      checks: write
+      id-token: write
+      issues: write
+      packages: write
+      pull-requests: write
   nodejs_npm_docs_release_on_branch:
     uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_docs_release_on_branch.yml@main
     secrets: inherit
+    permissions:
+      contents: read
+      actions: read
+      checks: write
+      pages: write
