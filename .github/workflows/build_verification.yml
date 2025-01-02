@@ -19,10 +19,21 @@ jobs:
   nodejs_npm_build_analysis:
     uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_build_analysis.yml@main
     secrets: inherit
+    permissions:
+      contents: read
+      actions: read
+      checks: write
   nodejs_npm_docs_build_analysis:
     uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_docs_build_analysis.yml@main
     secrets: inherit
+    permissions:
+      contents: read
+      actions: read
+      checks: write
   nodejs_npm_check_version_support:
     uses: PallasSystems/infrastructure-ci/.github/workflows/nodejs_npm_check_version_support.yml@main
     secrets: inherit
+    permissions:
+      contents: read
+      actions: read
 
